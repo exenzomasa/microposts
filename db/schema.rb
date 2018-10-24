@@ -32,10 +32,8 @@ ActiveRecord::Schema.define(version: 20181020043913) do
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "follow_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "favorite_id"
-    t.index ["favorite_id"], name: "index_relationships_on_favorite_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["follow_id"], name: "index_relationships_on_follow_id", using: :btree
     t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true, using: :btree
     t.index ["user_id"], name: "index_relationships_on_user_id", using: :btree
